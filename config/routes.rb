@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :customers
+  post '/upload' => 'versions#upload'
+
+  get '/download/:customer_name/:version.apk' => 'versions#download',
+    :version => /([0-9]+[\.][0-9]+[\.][0-9]+)|newest/
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
