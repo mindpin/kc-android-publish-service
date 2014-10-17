@@ -44,7 +44,6 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
 
   queue  %[echo "-----> Be sure to edit 'shared/config/mongoid.yml'."]
-  queue  %[echo "-----> Be sure to edit 'shared/config/env.yml'."]
   queue  %[echo "-----> Be sure to edit 'shared/config/secrets.yml'."]
 end
 
