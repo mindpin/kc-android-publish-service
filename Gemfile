@@ -37,7 +37,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "haml"
-gem "unicorn"
 gem "pry-byebug", :group => :development
 gem "mongoid", "~> 4.0.0"
 gem "bson_ext"
@@ -51,7 +50,7 @@ group :development, :test do
   gem "database_cleaner", "~> 1.2.0"
 end
 
-gem 'unicorn'
+gem 'unicorn', '~> 4.8'
 
 gem "mina",
     :github => "fushang318/mina",
