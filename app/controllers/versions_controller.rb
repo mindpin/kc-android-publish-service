@@ -35,8 +35,6 @@ class VersionsController < ApplicationController
       version = customer.versions.where(:version => params[:version]).first
     end
     
-    send_file version.package.path,
-      :disposition => 'attachment',
-      :filename => "kc_android_#{version.version}.apk"
+    redirect_to version.package.url
   end
 end

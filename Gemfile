@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -43,10 +43,16 @@ gem "mongoid", "~> 4.0.0"
 gem "bson_ext"
 # 文件上传，用于用户头像逻辑
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-# carrierwave 用到的图片切割
-gem "mini_magick", :require => false
+gem 'rest-client'
+gem 'carrierwave-aliyun'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem "database_cleaner", "~> 1.2.0"
 end
+
+gem 'unicorn'
+
+gem "mina",
+    :github => "fushang318/mina",
+    :tag => "v0.2.0fix"

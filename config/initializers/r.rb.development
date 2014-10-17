@@ -6,6 +6,11 @@ if !defined? R
 
     # 静态文件硬盘路径的前缀
     # 见 RUtil.get_static_file_path(path)
-    UPLOAD_FILE_BASE_PATH = Rails.root.join("public/static_files")
+    UPLOAD_FILE_BASE_PATH = "static_files"
+
+    ALIYUN_ACCESS_ID = "xxx"
+    ALIYUN_ACCESS_KEY = 'xxx'
+    ALIYUN_BUCKET = "xxx"
+    ALIYUN_AREA = "cn-qingdao"
   end
 end

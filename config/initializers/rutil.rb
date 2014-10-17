@@ -30,6 +30,26 @@ if !defined? RUtil
       p "*! 找不到配置: R::UPLOAD_FILE_BASE_PATH"
     end
 
+    if !defined? R::ALIYUN_ACCESS_ID
+      flag = false
+      p "*! 找不到配置: R::ALIYUN_ACCESS_ID"
+    end
+
+    if !defined? R::ALIYUN_ACCESS_KEY
+      flag = false
+      p "*! 找不到配置: R::ALIYUN_ACCESS_KEY"
+    end
+
+    if !defined? R::ALIYUN_BUCKET
+      flag = false
+      p "*! 找不到配置: R::ALIYUN_BUCKET"
+    end
+
+    if !defined? R::ALIYUN_AREA
+      flag = false
+      p "*! 找不到配置: R::ALIYUN_AREA"
+    end
+
     exit(0) if !flag
   end
 
@@ -40,7 +60,23 @@ if !defined? RUtil
       end
 
       def get_static_file_path(path)
-        File.join('/', R::UPLOAD_FILE_BASE_PATH, path)
+        File.join( R::UPLOAD_FILE_BASE_PATH, path)
+      end
+
+      def get_aliyun_access_id
+        R::ALIYUN_ACCESS_ID
+      end
+
+      def get_aliyun_access_key
+        R::ALIYUN_ACCESS_KEY
+      end
+
+      def get_aliyun_bucket
+        R::ALIYUN_BUCKET
+      end
+
+      def get_aliyun_area
+        R::ALIYUN_AREA
       end
     end
   end

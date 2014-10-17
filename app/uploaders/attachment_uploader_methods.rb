@@ -11,14 +11,14 @@ module AttachmentUploaderMethods
     RUtil.get_static_file_path("uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}")
   end
 
-  def url
-    _file_name = model[mounted_as]
-    return default_url if _file_name.blank?
+  # def url
+  #   _file_name = model[mounted_as]
+  #   return default_url if _file_name.blank?
 
-    prefix = version_name.blank? ? '' : "#{version_name}_"
+  #   prefix = version_name.blank? ? '' : "#{version_name}_"
 
-    RUtil.get_static_file_url("uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/#{prefix}#{_file_name}")
-  end
+  #   RUtil.get_static_file_url("uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/#{prefix}#{_file_name}")
+  # end
 
   private
     def secure_token

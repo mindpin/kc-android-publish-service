@@ -21,3 +21,5 @@ config/mongoid.y*l
 config/initializers/r.rb
 config/secrets.yml
 .rspec
+
+public/uploads/tmp/*
