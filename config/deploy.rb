@@ -45,6 +45,7 @@ task :setup => :environment do
 
   queue  %[echo "-----> Be sure to edit 'shared/config/mongoid.yml'."]
   queue  %[echo "-----> Be sure to edit 'shared/config/secrets.yml'."]
+  queue  %[echo "-----> Be sure to edit 'shared/config/initializers/r.rb'."]
 end
 
 desc "Deploys the current version to the server."
