@@ -37,4 +37,16 @@ class VersionsController < ApplicationController
     
     redirect_to version.package.url
   end
+
+  def list
+    customer = Customer.where(:name => params[:customer_name]).first
+    result = customer.versions.map do |version|
+      {
+        :version => version.version,
+        :is_milestone => version.is_milestone,
+        :download_url => version.package.url
+      }
+    end
+    render :json => result
+  end
 end
