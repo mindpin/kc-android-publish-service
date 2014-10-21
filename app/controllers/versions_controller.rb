@@ -1,5 +1,10 @@
+require 'digest/sha1'
 class VersionsController < ApplicationController
   def upload
+    if !_auth_success?
+      return render :json => {:result => 'auth fail'}, :status => 401 
+    end
+
     customer_name = params[:customer_name]
     package = params[:package]
     version = params[:version]
@@ -48,5 +53,9 @@ class VersionsController < ApplicationController
       }
     end
     render :json => result
+  end
+
+  def _auth_success?
+    Digest::SHA1.hexdigest(params[:password]||"") == "04c964bd8b86cb6737d641787e847619610eb2d6"
   end
 end
